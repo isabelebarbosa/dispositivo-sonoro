@@ -12,4 +12,12 @@ for(let contador=0;contador<listaDeTeclas.length;contador=contador+1){
     teclas.onclick=function(){             //função anônima auxiliar oara chamar tocaSom
         tocaSom(idAudio)                   //chamada da função tocaSom com parâmetro idAudio
     }
-       
+    teclas.onkeydown=function(evento){
+        if(evento.code!='tab'){
+            teclas.classlist.add(ativa);
+        }
+    }
+    teclas.onkeyup=function(){
+        teclas.classlist.remove('ativa');
+    }
+}
